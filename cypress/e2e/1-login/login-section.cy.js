@@ -7,7 +7,7 @@ describe('validating successfull login', () => {
     })
 
     it('verify log in with valid credentials', () => {
-        loginPage.login()
+        loginPage.loginSuccessfull()
     })
 }) 
 

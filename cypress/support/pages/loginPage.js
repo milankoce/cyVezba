@@ -3,7 +3,7 @@ import loginPageLocators from "../locators/loginPageLocators";
 
 export class LoginPage {
 
-    login(){
+    loginSuccessfull(){
         cy.get(loginPageLocators.usernameInputField).type('standard_user')
         cy.get(loginPageLocators.passwordInputField).type('secret_sauce')
         cy.get(loginPageLocators.loginButton).click()
