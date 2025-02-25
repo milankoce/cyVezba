@@ -13,11 +13,12 @@ describe('validating successfull login', () => {
 
 describe('validating unsuccessfull login', () => {
 
-    it('verify that user cannot log in with invalid credentials', () => {
-
+    it('verify that user cannot log in with invalid username', () => {
+        
     })
 
-    it('verify that user cannot log in with symbol characters', () => {
+    it('verify that user cannot log in with invalid password', () => {
 
     })
 })
+
