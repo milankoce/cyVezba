@@ -13,12 +13,15 @@ describe('validating successfull login', () => {
 
 describe('validating unsuccessfull login', () => {
 
+    beforeEach(() => {
+        cy.visit('https://www.saucedemo.com/')
+    })
     it('verify that user cannot log in with invalid username', () => {
-        
+        loginPage.loginWithInvalidUserName()
     })
 
     it('verify that user cannot log in with invalid password', () => {
-
+        loginPage.loginWithInvalidPassword()
     })
 })
 
