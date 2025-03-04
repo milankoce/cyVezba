@@ -64,6 +64,19 @@ export class HomePage {
         cy.url().should('eq', 'https://www.saucedemo.com/inventory.html');
 
     }
+
+    verifyElementInCart() {
+        cy.get(homePageLocators.itemPrice)
+        .eq(1)  // Selektuj drugi element u nizu
+        .invoke('text')  // Uzmi njegov tekst
+        .then((text) => {
+            cy.log(text) // Ispisi text u konzoli
+            cy.get(homePageLocators.addToCartButton).click()
+            cy.get(homePageLocators.cartButton).click()
+            cy.get(homePageLocators.itemInTheCart)
+            .should('contain', text); // Verifikacija da je text iznad u korpi
+        });
+    }
 }
 
 export const homePage = new HomePage();

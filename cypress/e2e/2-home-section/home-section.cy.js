@@ -11,4 +11,8 @@ describe('Home Section', () => {
     it('verify visibility of home screen elements', () => {
         homePage.verifyHomePageElements();
     });
+
+    it.only('verify successfully added item to the cart', () => {
+        homePage.verifyElementInCart();
+    })
 });
