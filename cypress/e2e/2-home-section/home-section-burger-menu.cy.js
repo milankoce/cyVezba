@@ -1,8 +1,8 @@
-import { loginPage} from "../../support/pages/loginPage";
+import { loginPage } from "../../support/pages/loginPage";
 import { homePage } from "../../support/pages/homePage";
 
 describe('Home section burger menu', () => {
-   
+
     beforeEach(() => {
         cy.visit('https://www.saucedemo.com/')
         loginPage.loginSuccessfull()
@@ -17,15 +17,15 @@ describe('Home section burger menu', () => {
         homePage.allItemsBurgerMenu();
     })
 
-    xit('verify about section', () => {
-
+    it('verify about section', () => {
+        homePage.aboutBurgerMenu();
     })
 
-    xit('verify logout section', () => {
-
+    it('verify logout section', () => {
+        homePage.userCanLogout();
     })
-
-    xit('verify reset app state section', () => {
-
+//ako zelis da ih iskljucis stavis x
+    it('verify reset app state section', () => {
+        homePage.resetApp();
     })
 });
