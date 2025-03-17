@@ -12,7 +12,7 @@ describe('Home Section', () => {
         homePage.verifyHomePageElements();
     });
 
-    it.only('verify successfully added item to the cart', () => {
+    it('verify successfully added item to the cart', () => {
         homePage.verifyElementInCart();
     })
 });

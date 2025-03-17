@@ -4,12 +4,16 @@ import loginPageLocators from "../locators/loginPageLocators";
 export class LoginPage {
 
     loginSuccessfull(){
-        cy.get(loginPageLocators.usernameInputField).type('standard_user')
-        cy.get(loginPageLocators.passwordInputField).type('secret_sauce')
+        cy.fixture('data').then((data) => {
+            cy.get(loginPageLocators.usernameInputField).type(data.username)
+            cy.get(loginPageLocators.passwordInputField).type(data.password)
+        })
         cy.get(loginPageLocators.loginButton).click()
         cy.wait(500)
-        cy.get(loginPageLocators.appLogoText).should('contain.text', 'Swag Labs')
-    }
+        cy.fixture('anotherData').then((anotherData) => {
+        cy.get(loginPageLocators.appLogoText).should('contain.text', anotherData.logoText)
+        })
+    }   
     loginWithInvalidUserName(){
         cy.get(loginPageLocators.usernameInputField).type('Bobana')
         cy.get(loginPageLocators.passwordInputField).type('secret_sauce')

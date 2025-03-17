@@ -3,7 +3,7 @@ import { loginPage} from "../../support/pages/loginPage";
 describe('validating successfull login', () => {
 
     beforeEach(() => {
-        cy.visit('https://www.saucedemo.com/')
+        cy.visit(Cypress.env('sauceDemoUrl'))
     })
 
     it('verify log in with valid credentials', () => {
@@ -14,7 +14,7 @@ describe('validating successfull login', () => {
 describe('validating unsuccessfull login', () => {
 
     beforeEach(() => {
-        cy.visit('https://www.saucedemo.com/')
+        cy.visit('/')
     })
     it('verify that user cannot log in with invalid username', () => {
         loginPage.loginWithInvalidUserName()
