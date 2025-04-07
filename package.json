@@ -1,14 +1,22 @@
 {
 
   "scripts": {
+
     "cypress": "cypress open",
-    "loginSection:tests": "cypress run --e2e --headless --browser chrome --spec cypress/e2e/1-login/login-section.cy.js",
+
+    "loginSection:tests": "cypress run --e2e --headless --reporter mochawesome --browser chrome --spec cypress/e2e/1-login/login-section.cy.js",
+
     "homeSection:tests": "cypress run --e2e --headless --browser chrome --spec cypress/e2e/2-home-section/**.cy.js"
+
   },
 
   "devDependencies": {
-    "cypress": "^14.0.2"
+
+    "cypress": "^14.0.2",
+
+    "cypress-mochawesome-reporter": "^3.8.2"
+
   }
 
-  
 }
+

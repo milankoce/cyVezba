@@ -2,4 +2,5 @@ cypress/downloads
 node_modules
 cypress/fixtures/data.json
 cypress/screenshots
+mochawesome-report
 

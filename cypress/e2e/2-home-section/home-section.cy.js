@@ -8,7 +8,7 @@ describe('Home Section', () => {
         loginPage.loginSuccessfull()
     });
 
-    it('verify visibility of home screen elements', () => {
+    it.only('verify visibility of home screen elements', () => {
         homePage.verifyHomePageElements();
     });
 

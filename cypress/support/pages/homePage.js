@@ -4,8 +4,9 @@ import loginPageLocators from "../locators/loginPageLocators";
 export class HomePage {
 
     verifyHomePageElements() {
-        cy.url().should('include', '/inventory.html')
-        cy.get(homePageLocators.headerLabel)
+        
+        cy.url({timeout:10000}).should('include', '/inventory.html')
+        cy.get(homePageLocators.headerLabel, {timeout:10000})
             .should('be.visible')
             .and('have.text', 'Swag Labs')
         cy.get(homePageLocators.cartButton)

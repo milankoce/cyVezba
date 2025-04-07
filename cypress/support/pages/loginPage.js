@@ -8,10 +8,12 @@ export class LoginPage {
             cy.get(loginPageLocators.usernameInputField).type(data.username)
             cy.get(loginPageLocators.passwordInputField).type(data.password)
         })
+        cy.intercept('POST', 'https://events.backtrace.io/api/**').as('apiRequest');
         cy.get(loginPageLocators.loginButton).click()
         cy.wait(500)
         cy.fixture('anotherData').then((anotherData) => {
         cy.get(loginPageLocators.appLogoText).should('contain.text', anotherData.logoText)
+        cy.wait('@apiRequest');
         })
     }   
     loginWithInvalidUserName(){
